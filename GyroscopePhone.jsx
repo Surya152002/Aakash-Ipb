@@ -13,6 +13,9 @@ const GyroscopePhone = () => {
       // Update the phone's rotation
       const phone = document.getElementById('phone');
       phone.style.transform = `rotateX(${-normalizedGamma}rad) rotateY(${beta}deg)`;
+
+      // Print gyroscope values
+      console.log(`alpha: ${alpha}, beta: ${beta}, gamma: ${gamma}`);
     };
 
     window.addEventListener('deviceorientation', handleOrientation);
