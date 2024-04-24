@@ -10,7 +10,7 @@ const accelerometerXRect = document.querySelector('.accelerometer .x.rect');
 const accelerometerYRect = document.querySelector('.accelerometer .y.rect');
 const accelerometerZRect = document.querySelector('.accelerometer .z.rect');
 
-const gyroscopeXRect =document.querySelector('.gyroscope .x.rect');
+const gyroscopeXRect = document.querySelector('.gyroscope .x.rect');
 const gyroscopeYRect = document.querySelector('.gyroscope .y.rect');
 const gyroscopeZRect = document.querySelector('.gyroscope .z.rect');
 
