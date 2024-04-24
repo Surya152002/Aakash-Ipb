@@ -17,14 +17,14 @@ const gyroscopeZRect = document.querySelector('.gyroscope .z.rect');
 // Function to update data with real-time values
 function updateData(event) {
   // Update accelerometer data
-  accelerometerX.textContent = event.acceleration.x.toFixed(2);
-  accelerometerY.textContent = event.acceleration.y.toFixed(2);
-  accelerometerZ.textContent = event.acceleration.z.toFixed(2);
+  accelerometerX.textContent = Math.round(event.acceleration.x * 100) / 100;
+  accelerometerY.textContent = Math.round(event.acceleration.y * 100) / 100;
+  accelerometerZ.textContent = Math.round(event.acceleration.z * 100) / 100;
 
   // Update gyroscope data
-  gyroscopeX.textContent = event.rotationRate.alpha.toFixed(2);
-  gyroscopeY.textContent = event.rotationRate.beta.toFixed(2);
-  gyroscopeZ.textContent = event.rotationRate.gamma.toFixed(2);
+  gyroscopeX.textContent = Math.round(event.rotationRate.alpha * 100) / 100;
+  gyroscopeY.textContent = Math.round(event.rotationRate.beta * 100) / 100;
+  gyroscopeZ.textContent = Math.round(event.rotationRate.gamma * 100) / 100;
 
   // Update visualizer with data values
   accelerometerXRect.style.width = `${Math.abs(event.acceleration.x) * 10}%`;
@@ -35,6 +35,7 @@ function updateData(event) {
   gyroscopeYRect.style.transform = `rotateY(${event.rotationRate.beta}deg)`;
   gyroscopeZRect.style.transform = `rotateZ(${event.rotationRate.gamma}deg)`;
 }
+
 
 // Add event listener for device motion
 window.addEventListener('devicemotion', updateData);
