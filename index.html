@@ -3,43 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <title>Real-time Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <h1>Real-time Dashboard</h1>
-    <div class="data-container">
-      <div class="data-point">
-        <div class="label">Accelerometer X:</div>
-        <div class="value" id="accelerometer-x"></div>
+    <div class="container">
+      <div class="accelerometer">
+        <h2>Accelerometer</h2>
+        <p>X: <span id="accelerometer-x">0</span></p>
+        <p>Y: <span id="accelerometer-y">0</span></p>
+        <p>Z: <span id="accelerometer-z">0</span></p>
       </div>
-      <div class="data-point">
-        <div class="label">Accelerometer Y:</div>
-        <div class="value" id="accelerometer-y"></div>
+      <div class="gyroscope">
+        <h2>Gyroscope</h2>
+        <p>X: <span id="gyroscope-x">0</span></p>
+        <p>Y: <span id="gyroscope-y">0</span></p>
+        <p>Z: <span id="gyroscope-z">0</span></p>
       </div>
-      <div class="data-point">
-        <div class="label">Accelerometer Z:</div>
-        <div class="value" id="accelerometer-z"></div>
-      </div>
-      <div class="data-point">
-        <div class="label">Gyroscope X:</div>
-        <div class="value" id="gyroscope-x"></div>
-      </div>
-      <div class="data-point">
-        <div class="label">Gyroscope Y:</div>
-        <div class="value" id="gyroscope-y"></div>
-      </div>
-      <div class="data-point">
-        <div class="label">Gyroscope Z:</div>
-        <div class="value" id="gyroscope-z"></div>
-      </div>
-    </div>
-    <div class="visualizer-container">
-      <div class="visualizer" id="accelerometer-x-visualizer"></div>
-      <div class="visualizer" id="accelerometer-y-visualizer"></div>
-      <div class="visualizer" id="accelerometer-z-visualizer"></div>
-      <div class="visualizer" id="gyroscope-x-visualizer"></div>
-      <div class="visualizer" id="gyroscope-y-visualizer"></div>
-      <div class="visualizer" id="gyroscope-z-visualizer"></div>
     </div>
     <script src="app.js"></script>
   </body>
