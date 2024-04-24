@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
     <title>Real-time Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div id="header">
+    <div class="container">
       <h1>Real-time Dashboard</h1>
-    </div>
-    <div id="content">
-      <div id="gyroscope-data">
-        <h2>Gyroscope Data</h2>
-        <div id="gyroscope-x">Gyroscope X: <span id="gyroscope-x-value"></span></div>
-        <div id="gyroscope-y">Gyroscope Y: <span id="gyroscope-y-value"></span></div>
-        <div id="gyroscope-z">Gyroscope Z: <span id="gyroscope-z-value"></span></div>
+      <div class="accelerometer">
+        <h2>Accelerometer</h2>
+        <div class="data x">X: <span id="accelerometer-x">0</span></div>
+        <div class="data y">Y: <span id="accelerometer-y">0</span></div>
+        <div class="data z">Z: <span id="accelerometer-z">0</span></div>
+        <div class="visualizer">
+          <div class="rect x"></div>
+          <div class="rect y"></div>
+          <div class="rect z"></div>
+        </div>
       </div>
-      <div id="accelerometer-data">
-        <h2>Accelerometer Data</h2>
-        <div id="accelerometer-x">Accelerometer X: <span id="accelerometer-x-value"></span></div>
-        <div id="accelerometer-y">Accelerometer Y: <span id="accelerometer-y-value"></span></div>
-        <div id="accelerometer-z">Accelerometer Z: <span id="accelerometer-z-value"></span></div>
+      <div class="gyroscope">
+        <h2>Gyroscope</h2>
+        <div class="data x">X: <span id="gyroscope-x">0</span></div>
+        <div class="data y">Y: <span id="gyroscope-y">0</span></div>
+        <div class="data z">Z: <span id="gyroscope-z">0</span></div>
+        <div class="visualizer">
+          <div class="rect x"></div>
+          <div class="rect y"></div>
+          <div class="rect z"></div>
+        </div>
       </div>
     </div>
     <script src="app.js"></script>
