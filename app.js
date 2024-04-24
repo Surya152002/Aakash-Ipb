@@ -22,9 +22,9 @@ function updateData(event) {
   accelerometerZ.textContent = Math.round(event.acceleration.z * 100) ;
 
   // Update gyroscope data
-  gyroscopeX.textContent = Math.round(event.rotationRate.alpha * 100) / 100;
-  gyroscopeY.textContent = Math.round(event.rotationRate.beta * 100) / 100;
-  gyroscopeZ.textContent = Math.round(event.rotationRate.gamma * 100) / 100;
+  gyroscopeX.textContent = Math.round(event.rotationRate.alpha * 100) ;
+  gyroscopeY.textContent = Math.round(event.rotationRate.beta * 100) ;
+  gyroscopeZ.textContent = Math.round(event.rotationRate.gamma * 100);
 
   // Update visualizer with data values
   accelerometerXRect.style.width = `${Math.abs(event.acceleration.x) * 10}%`;
