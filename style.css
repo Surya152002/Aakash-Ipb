@@ -4,32 +4,14 @@ body {
   padding: 0;
 }
 
-#header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
+.sensor-data {
+  margin-bottom: 20px;
 }
 
-#content {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-#gyroscope-data, #accelerometer-data {
-  border: 1px solid #ccc;
-  padding: 20px;
-  width: 45%;
-}
-
-h2 {
+.sensor-data h2 {
   margin-top: 0;
 }
 
-div > div {
-  margin-bottom: 10px;
-}
-
-span {
-  font-weight: bold;
+.sensor-data p {
+  margin: 5px 0;
 }
