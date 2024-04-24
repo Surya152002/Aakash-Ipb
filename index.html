@@ -6,19 +6,29 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <h1>Real-time Dashboard</h1>
     <div class="container">
+      <h1>Real-time Dashboard</h1>
       <div class="accelerometer">
         <h2>Accelerometer</h2>
-        <p>X: <span id="accelerometer-x">0</span></p>
-        <p>Y: <span id="accelerometer-y">0</span></p>
-        <p>Z: <span id="accelerometer-z">0</span></p>
+        <div class="data x">X: <span id="accelerometer-x">0</span></div>
+        <div class="data y">Y: <span id="accelerometer-y">0</span></div>
+        <div class="data z">Z: <span id="accelerometer-z">0</span></div>
+        <div class="visualizer">
+          <div class="rect x"></div>
+          <div class="rect y"></div>
+          <div class="rect z"></div>
+        </div>
       </div>
       <div class="gyroscope">
         <h2>Gyroscope</h2>
-        <p>X: <span id="gyroscope-x">0</span></p>
-        <p>Y: <span id="gyroscope-y">0</span></p>
-        <p>Z: <span id="gyroscope-z">0</span></p>
+        <div class="data x">X: <span id="gyroscope-x">0</span></div>
+        <div class="data y">Y: <span id="gyroscope-y">0</span></div>
+        <div class="data z">Z: <span id="gyroscope-z">0</span></div>
+        <div class="visualizer">
+          <div class="rect x"></div>
+          <div class="rect y"></div>
+          <div class="rect z"></div>
+        </div>
       </div>
     </div>
     <script src="app.js"></script>
