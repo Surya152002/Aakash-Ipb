@@ -1,14 +1,36 @@
-function updateGyroscopeData(event) {
-  document.getElementById('gyroscope-x-value').textContent = Math.round(event.gamma * 100) / 100;
-  document.getElementById('gyroscope-y-value').textContent = Math.round(event.beta * 100) / 100;
-  document.getElementById('gyroscope-z-value').textContent = Math.round(event.alpha * 100) / 100;
+const accelerometer = new DeviceMotionEvent('deviceorientation');
+const gyroscope = new DeviceOrientationEvent('deviceorientation');
+
+const accelerometerX = document.getElementById('accelerometer-x');
+const accelerometerY = document.getElementById('accelerometer-y');
+const accelerometerZ = document.getElementById('accelerometer-z');
+
+const gyroscopeX = document.getElementById('gyroscope-x');
+const gyroscopeY = document.getElementById('gyroscope-y');
+const gyroscopeZ = document.getElementById('gyroscope-z');
+
+function updateData() {
+  if (accelerometer.accelerationIncludingGravity) {
+    accelerometerX.textContent = Math.floor(accelerometer.accelerationIncludingGravity.x);
+    accelerometerY.textContent = Math.floor(accelerometer.accelerationIncludingGravity.y);
+    accelerometerZ.textContent = Math.floor(accelerometer.accelerationIncludingGravity.z);
+  }
+
+  if (gyroscope.gamma) {
+    gyroscopeX.textContent = Math.floor(gyroscope.gamma);
+    gyroscopeY.textContent = Math.floor(gyroscope.beta);
+    gyroscopeZ.textContent = Math.floor(gyroscope.alpha);
+  }
 }
 
-function updateAccelerometerData(event) {
-  document.getElementById('accelerometer-x-value').textContent = Math.round(event.accelerationIncludingGravity.x * 100) / 100;
-  document.getElementById('accelerometer-y-value').textContent = Math.round(event.accelerationIncludingGravity.y * 100) / 100;
-  document.getElementById('accelerometer-z-value').textContent = Math.round(event.accelerationIncludingGravity.z * 100) / 100;
-}
+window.addEventListener('deviceorientation', (event) => {
+  accelerometer = event;
+  updateData();
+});
 
-window.addEventListener('deviceorientation', updateGyroscopeData);
-window.addEventListener('devicemotion', updateAccelerometerData);
+window.addEventListener('deviceorientationabsolute', (event) => {
+  gyroscope = event;
+  updateData();
+});
+
+setInterval(updateData, 100);
