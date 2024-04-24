@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Real-time Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Real-time Dashboard</h1>
-      <div class="row">
-        <div class="column">
-          <h2>Accelerometer Data</h2>
-          <div id="accelerometer-chart"></div>
-        </div>
-        <div class="column">
-          <h2>Gyroscope Data</h2>
-          <div id="gyroscope-chart"></div>
-        </div>
-      </div>
-    </div>
-    <script src="app.js"></script>
-  </body>
+<head>
+	<title>Real-time Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Real-time Dashboard</h1>
+	<div id="accelerometer">
+		<h2>Accelerometer</h2>
+		<p id="x"></p>
+		<p id="y"></p>
+		<p id="z"></p>
+	</div>
+	<div id="gyroscope">
+		<h2>Gyroscope</h2>
+		<p id="alpha"></p>
+		<p id="beta"></p>
+		<p id="gamma"></p>
+	</div>
+	<script src="script.js"></script>
+</body>
 </html>
