@@ -17,9 +17,9 @@ const gyroscopeZRect = document.querySelector('.gyroscope .z.rect');
 // Function to update data with real-time values
 function updateData(event) {
   // Update accelerometer data
-  accelerometerX.textContent = Math.round(event.acceleration.x * 100) / 100;
-  accelerometerY.textContent = Math.round(event.acceleration.y * 100) / 100;
-  accelerometerZ.textContent = Math.round(event.acceleration.z * 100) / 100;
+  accelerometerX.textContent = Math.round(event.acceleration.x * 100) ;
+  accelerometerY.textContent = Math.round(event.acceleration.y * 100) ;
+  accelerometerZ.textContent = Math.round(event.acceleration.z * 100) ;
 
   // Update gyroscope data
   gyroscopeX.textContent = Math.round(event.rotationRate.alpha * 100) / 100;
