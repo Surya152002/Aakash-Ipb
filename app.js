@@ -1,50 +1,18 @@
-const accelerometerData = [
-  { timestamp: 0, x: 0, y: 0, z: 0 },
-  // ...
-];
+const socket = new WebSocket('ws://localhost:3000');
 
-const gyroscopeData = [
-  { timestamp: 0, x: 0, y: 0, z: 0 },
-  // ...
-];
-
-// Set up accelerometer chart
-const accelerometerChart = new Chartist.Line('#accelerometer-chart', {
-  labels: accelerometerData.map((data) => data.timestamp),
-  series: [accelerometerData.map((data) => data.x), accelerometerData.map((data) => data.y), accelerometerData.map((data) => data.z)],
+socket.addEventListener('open', (event) => {
+  console.log('WebSocket connection opened:', event);
 });
 
-// Set up gyroscope chart
-const gyroscopeChart = new Chartist.Line('#gyroscope-chart', {
-  labels: gyroscopeData.map((data) => data.timestamp),
-  series: [gyroscopeData.map((data) => data.x), gyroscopeData.map((data) => data.y), gyroscopeData.map((data) => data.z)],
+socket.addEventListener('message', (event) => {
+  const data = JSON.parse(event.data);
+  document.getElementById('gyroscope-x-value').textContent = data.gyroscope.x;
+  document.getElementById('gyroscope-y-value').textContent = data.gyroscope.y;
+  document.getElementById('gyroscope-z-value').textContent = data.gyroscope.z;
+  document.getElementById('accelerometer-x-value').textContent = data.accelerometer.x;
+  document.getElementById('accelerometer-y-value').textContent = data.accelerometer.y;
+  document.getElementById('accelerometer-z-value').textContent = data.accelerometer.z;
 });
 
-// Update charts with new data
-setInterval(() => {
-  // Update accelerometer data
-  accelerometerData.push({
-    timestamp: Date.now(),
-    x: Math.random() * 10,
-    y: Math.random() * 10,
-    z: Math.random() * 10,
-  });
-
-  // Update gyroscope data
-  gyroscopeData.push({
-    timestamp: Date.now(),
-    x: Math.random() * 10,
-    y: Math.random() * 10,
-    z: Math.random() * 10,
-  });
-
-  // Update accelerometer chart
-  accelerometerChart.update({
-    series: [accelerometerData.map((data) => data.x), accelerometerData.map((data) => data.y), accelerometerData.map((data) => data.z)],
-  });
-
-  // Update gyroscope chart
-  gyroscopeChart.update({
-    series: [gyroscopeData.map((data) => data.x), gyroscopeData.map((data) => data.y), gyroscopeData.map((data) => data.z)],
-  });
-}, 1000);
+socket.addEventListener('close', (event) => {
+  console.log('WebSocket connection closed:', event);
